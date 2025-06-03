@@ -1,44 +1,63 @@
-# WhatsApp Chat Analyzer (Shiny App)
+# 📊 WhatsApp Chat Analyzer (Shiny App)
 
-This project is a Shiny web application designed to analyze WhatsApp chat history exported as `.txt` files. It allows users to explore message patterns, user activity, and other chat-related statistics through interactive visualizations and summaries.
+This project is a **Shiny web application** designed to analyze WhatsApp group chat history exported as `.txt` files. It enables users to explore message patterns, user activity, and other chat-related statistics through **interactive visualizations** and **summaries**. The app supports both **English** and **Turkish** interfaces.
 
-## 🔧 Features (Planned & In Progress)
+---
 
-- 📁 Upload `.txt` files exported from WhatsApp
-- 📊 Message frequency over time
-- 🧑‍🤝‍🧑 User-level activity stats
-- 🧠 Most common words
-- 🌐 Word cloud generation
-- 😂 Emoji usage analysis
-- 📆 Time-based heatmaps
+## 🔧 Features (In Progress & Implemented)
+
+- 📁 Upload `.txt` files exported from WhatsApp  
+- 🌐 **Multilingual interface**: English 🇬🇧 and Turkish 🇹🇷  
+- 📊 Message frequency over time (daily timeline with peak detection)  
+- 🧑‍🤝‍🧑 User-level activity stats (top senders, word usage, hourly activity)  
+- 🧠 Most common words (with stopword filtering)  
+- 🌥️ Word cloud generation (planned)  
+- 😂 Emoji usage analysis (planned)  
+- 📆 Time-based heatmaps (planned)  
+- ✍️ Most used word per user  
+- 🧍 Name mentions detection in messages  
+- 🔍 Keyword & user filtering for focused analysis  
+- 📈 Filtered results update visualizations accordingly  
+
+---
 
 ## 📂 Exporting WhatsApp Chat Files
 
-To use this app, export your WhatsApp chat via the app as follows:
+To use this app, export your WhatsApp chat via the mobile app as follows:
 
-- **WhatsApp > Chat > Export Chat**  
-- Choose **"Without Media"**
-- Send the file to your computer and upload the `.txt` file in the app
+1. **WhatsApp > Chat > Export Chat**  
+2. Choose **“Without Media”**  
+3. Send the file to your computer  
+4. Upload the exported `.txt` file into the app  
 
-> ⚠️ Only `.txt` files in the default WhatsApp export format are supported.
+⚠️ Only `.txt` files in the default WhatsApp export format are supported.  
+📌 **Maximum supported file size is 30MB**.
+
+---
 
 ## 🚀 Getting Started (Local Development)
 
-You can run the app locally in RStudio:
+You can run the app locally using RStudio:
 
 ```r
 library(shiny)
 runGitHub("aarday/whatsapp-chat-analyzer")
 ```
+```r
+library(shiny)
+library(tidyverse)
+library(tidytext)
+library(lubridate)
+library(stringr)
+```
+## 🔒 Privacy Notice
+This app processes your WhatsApp chat data only during your session.
+No data is stored, saved, or sent to any external server. All analysis happens locally in a temporary runtime environment.
 
-Make sure you have the required R packages installed. A DESCRIPTION or renv.lock file will be added in future versions to help manage dependencies.
+## 👉 Use the app only with chat files you are authorized to analyze.
 
-🔒 Privacy Notice
-This app processes your WhatsApp chat data only during your session. No data is stored, saved, or sent to any external server. All analysis happens in a temporary runtime environment.
+## 🙏 Acknowledgements
+This project was developed with assistance from ChatGPT by OpenAI, which supported both R programming and feature design during development.
 
-Use the app only with chat files you are authorized to analyze.
-
-📄 License
+## 📄 License
 This project is licensed under the MIT License.
-
-
