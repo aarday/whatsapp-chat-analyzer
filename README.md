@@ -7,7 +7,7 @@ This project is a **Shiny web application** designed to analyze WhatsApp group c
 ## 🔧 Features (In Progress & Implemented)
 
 - 📁 Upload `.txt` files exported from WhatsApp  
-- 🌐 **Multilingual interface**: English 🇬🇧 and Turkish 🇹🇷  
+- 🌐 **Multilingual interface**: English EN and Turkish TR  
 - 📊 Message frequency over time (daily timeline with peak detection)  
 - 🧑‍🤝‍🧑 User-level activity stats (top senders, word usage, hourly activity)  
 - 🧠 Most common words (with stopword filtering)  
@@ -43,6 +43,9 @@ You can run the app locally using RStudio:
 library(shiny)
 runGitHub("aarday/whatsapp-chat-analyzer")
 ```
+Alternatively, you can also run the app online without installing anything using [shinyapps.io](https://aarday.shinyapps.io/whatsapp-chat-analyzer/).
+
+---
 ```r
 library(shiny)
 library(tidyverse)
