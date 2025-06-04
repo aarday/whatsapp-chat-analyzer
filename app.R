@@ -90,9 +90,15 @@ server <- function(input, output, session) {
         user = str_match(raw, "- (.*?):")[,2],
         message = str_replace(raw, ".*?: ", "")
       ) %>%
-      select(datetime, user, message) %>%
+     select(datetime, user, message) %>%
       filter(
-        !str_detect(message, regex("gruba katıldı|gruptan ayrıldı|medya dahil edilmedi|bu mesaj silindi|mesaj iletilmedi|gönderilmedi", ignore_case = TRUE)),
+        !str_detect(
+          message,
+          regex(
+            "gruba katıldı|gruptan ayrıldı|medya dahil edilmedi|bu mesaj silindi|mesaj iletilmedi|gönderilmedi|joined using this group's invite link|left|media omitted|this message was deleted|you deleted this message|message not delivered|not sent",
+            ignore_case = TRUE
+          )
+        ),
         !is.na(user)
       )
     
